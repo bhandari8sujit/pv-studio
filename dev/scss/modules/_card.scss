@@ -1,0 +1,96 @@
+.card{
+    background: $color-white;
+    border: 1px solid $color-card;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 20px rgba(199,199,199,.5);
+    border-radius: 4px;
+    padding: 30px 30px 20px 30px;
+    margin-bottom: 30px;
+
+    img{
+        margin-bottom: 20px;
+
+        @include respond(tab-land){
+            width: 4.5rem;
+        }
+    }
+    h5{
+        font-size: 1.8rem;
+    }
+    &-desc{
+        line-height: 24px;
+        color: $color-base;
+    }
+
+    &:hover{
+        border-top: 2px solid $color-brand;
+        // transform: scale(1.01); 
+        box-shadow: 0px 2px 20px rgba(211, 211, 211, 0.9);
+    }
+    
+    transition:all .5s ease-in-out;
+
+    h5{
+        @include respond(tab-land){
+            font-size: 1.7rem;
+        }
+    }
+    .m-b-25{
+        @include respond(tab-land){
+           margin-bottom: 15px;
+        }
+    }
+}
+
+.rate-card{
+    padding: 75px 30px;    
+    // border-top: 2px solid $color-brand;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 20px rgba(211, 211, 211, 0.5);
+    border: 1px solid #E9E9E9;
+    box-shadow: 0 2px 20px 0 #D3D3D3;
+    border-radius: 5px;
+    position:relative;
+
+    @include respond(tab-port){
+        padding: 40px 20px;
+        margin-bottom: 20px;
+    }
+
+    p{
+        margin-bottom: 30px;
+        color:$color-base;        
+    }
+    span{
+        color: $color-brand;
+        font-size: 75px;      
+        font-family: sf_ui_text_light;
+
+        @include respond(tab-port){
+            font-size:50px;
+        }
+    }
+    &:hover{
+        // transform: scale(1.01); 
+        // box-shadow: 0px 10px 20px rgba(211, 211, 211, 0.9);
+        // border-top: 5px solid $color-brand;
+
+        &:before{
+            height: 4px;
+        }
+    }
+    transition:all .5s ease-in-out;
+
+    &:before{
+        position:absolute;
+        content: '';
+        background: $color-brand;
+        height: 2px;
+        width:100%;
+        top:0;
+        left:0;
+        z-index:13;
+        border-radius:5px;
+        transition:height .5s ease-in-out;
+    }
+}

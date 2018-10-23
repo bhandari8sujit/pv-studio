@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'sf_ui_text';
+    src: url('../fonts/sf-ui-text-regular-webfont.woff2') format('woff2'), url('../fonts/sf-ui-text-regular-webfont.woff') format('woff'), url('../fonts/sf-ui-text-regular-webfont.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sf_ui_text_semibold';
+    src: url('../../fonts/sf-ui-text-semibold-webfont.woff2') format('woff2'), url('../../fonts/sf-ui-text-semibold-webfont.woff') format('woff'),url('../../fonts/sf-ui-text-semibold-webfont.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'sf_ui_text_light';
+    src: url('../fonts/sf-ui-text-light-webfont.woff2') format('woff2'), url('../fonts/sf-ui-text-light-webfont.woff') format('woff'),url('../fonts/sf-ui-text-light-webfont.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$base-font: 	    'sf_ui_text', Helvetica, Arial, sans-serif;
+$header-font: 	    'sf_ui_text', Helvetica, Arial, sans-serif;
+$title-font: 	    'sf_ui_text_semibold','sf_ui_text', Georgia, serif;
+
+body {
+    @include font-smoothing(on); 
+    font-family: $base-font;
+    
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 15px;
+    font-family: $header-font;
+    line-height: 30px;
+}
+
+p{
+    line-height: 30px;
+    font-family: $base-font;
+    font-size: 1.5rem;
+    
+}
+
+a:hover{
+    text-decoration: none;
+}

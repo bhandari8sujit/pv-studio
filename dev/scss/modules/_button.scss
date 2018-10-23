@@ -1,0 +1,18 @@
+.btn--cta{
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 12px 25px !important;
+    color: $color-white !important;
+    // background: $color-brand;
+    font-weight:600;
+    font-size: 15px;
+
+    &:hover{
+        background: $color-white !important;
+        color:$color-brand !important;
+    }
+
+    @include respond(phone){
+        padding: 8px 16px !important;
+    }
+}
