@@ -1,12 +1,12 @@
-## Frontend UI Development with Gulp and living Styleguide (SC5)
+## PV-Studio website
 ---
 
-### Getting Started
+### Setup
 
 1. Open `CMD` or `Terminal`, point the path to your designed folder.
-2. In the same CMD or , run `git clone git@github.com:pagevamp/frontend-architecture.git`
-3. Next, run `npm i`
-4. Now, run `gulp` from same CMD window. It will open the project server: 
+2. clone the repo
+3. Next, run `npm i` or `yarn`
+4. Now, run `gulp servews` from same CMD window. It will open the project server: 
 - `Project` - `http://localhost:3000/`
 - `Styleguide` - `http://localhost:3001/`
 
