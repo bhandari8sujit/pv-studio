@@ -1,5 +1,5 @@
-$(function () {
-  $("#myModal").on("show.bs.modal", function (event) {
+$(function() {
+  $("#myModal").on("show.bs.modal", function(event) {
     var element = $(event.relatedTarget);
     // var element = elem.parentNode;
 
@@ -7,7 +7,7 @@ $(function () {
     console.log(title);
     var desc = element.find(".pvworks-description").text();
     console.log(desc);
-    var image = element.find(".pvworks-image").attr('src');
+    var image = element.find(".pvworks-image").attr("src");
     console.log(image);
     var modal = $(this);
     $(".modal-title").html(title);
@@ -15,7 +15,6 @@ $(function () {
     $(".modal-img").attr("src", image);
   });
 });
-
 
 $(window).scroll(function() {
   var $navbar = $(".navbar-default");
@@ -29,25 +28,56 @@ $(window).scroll(function() {
     $navbar.css({ background: "transparent", padding: "30px 70px" });
   }
 
-  $.fn.isOnScreen = function () {
+  //fade feature
+  if ($(window).width() > 767) {
+    $(".pvbanner").css(
+      "opacity",
+      1 - $(window).scrollTop() / $(".pvbanner-hero").height()
+    );
+  }
 
-    var win = $(window);
+  // $.fn.isOnScreen = function() {
+  //   var win = $(window);
 
-    var viewport = {
-      top: win.scrollTop(),
-      left: win.scrollLeft()
-    };
-    viewport.right = viewport.left + win.width();
-    viewport.bottom = viewport.top + win.height();
+  //   var viewport = {
+  //     top: win.scrollTop(),
+  //     left: win.scrollLeft()
+  //   };
+  //   viewport.right = viewport.left + win.width();
+  //   viewport.bottom = viewport.top + win.height();
 
-    var bounds = this.offset();
-    bounds.right = bounds.left + this.outerWidth();
-    bounds.bottom = bounds.top + this.outerHeight();
+  //   var bounds = this.offset();
+  //   bounds.right = bounds.left + this.outerWidth();
+  //   bounds.bottom = bounds.top + this.outerHeight();
 
-    return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
-
-  };
+  //   return !(
+  //     viewport.right < bounds.left ||
+  //     viewport.left > bounds.right ||
+  //     viewport.bottom < bounds.top ||
+  //     viewport.top > bounds.bottom
+  //   );
+  // };
 });
+
+(function($, win) {
+  $.fn.inViewport = function(cb) {
+    return this.each(function(i, el) {
+      function visPx() {
+        var elH = $(el).outerHeight(),
+          H = $(win).height(),
+          r = el.getBoundingClientRect(),
+          t = r.top,
+          b = r.bottom;
+        return cb.call(
+          el,
+          Math.max(0, t > 0 ? Math.min(elH, H - t) : Math.min(b, H))
+        );
+      }
+      visPx();
+      $(win).on("resize scroll", visPx);
+    });
+  };
+})(jQuery, window);
 
 $(".navbar-toggle").click(function() {
   $(".navbar-default").css({
@@ -76,8 +106,6 @@ $("#fullnav a").click(function() {
   $fullNav.css("height", "0%");
 });
 
-
-
 if ($(window).width() > 768) {
   var controller = new ScrollMagic.Controller({
     globalSceneOptions: { triggerHook: "onEnter", duration: "200%" }
@@ -97,7 +125,7 @@ if ($(window).width() > 768) {
     .addTo(controller);
 
   new ScrollMagic.Scene({ triggerElement: "#services" })
-    .setTween("#services .card", {y: "-10%", ease: Linear.easeNone})
+    .setTween("#services .card", { y: "-10%", ease: Linear.easeNone })
     // .addIndicators()
     .addTo(controller);
 
@@ -124,15 +152,6 @@ if ($(window).width() > 768) {
     }
   });
 }
-
-//fade feature
-// if($(window).width()>767){
-
-//   $(window).scroll(function(){
-//     $(".pvbanner").css("opacity", 1 - $(window).scrollTop() / 500);
-//   });
-
-// }
 
 // var $pvheight = $(".pvbanner").height();
 // console.log($pvheight);

@@ -273,9 +273,10 @@
 .pvworks {
   img {
     max-width: 100%;
-    box-shadow: 5px 5px 15px rgba(165, 165, 165, 0.5);
-    border-style: inset;
-    border: 10px solid #fff;
+    // box-shadow: 5px 5px 15px rgba(165, 165, 165, 0.5);
+    // border-style: inset;
+    border: 1px solid #ddd;
+    padding: 1px;
     margin-bottom: 30px;
   }
   &-desc {
@@ -286,6 +287,14 @@
     color: #000;
     cursor: pointer;
   }
+  span.details {
+    color: #000;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      color: #a86ad1 !important;
+    }
+  }
+
   .btn {
     color: #fff;
     background: linear-gradient(-45deg, #8739e5 0%, #5496ff);
