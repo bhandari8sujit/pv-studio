@@ -32,7 +32,7 @@ $(window).scroll(function() {
   if ($(window).width() > 767) {
     $(".pvbanner").css(
       "opacity",
-      1 - $(window).scrollTop() / $(".pvbanner-hero").height()
+      1 - $(window).scrollTop() / $(".pvbanner-hero").innerHeight()
     );
   }
 
