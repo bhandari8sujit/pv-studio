@@ -145,6 +145,13 @@ if ($(window).width() > 768) {
     }
   });
 
+  $("#works").inViewport(function(px) {
+    if (px > 200) {
+      $(".pvwho").addClass("animated fadeInUp slow delay-3s");
+      // $(".content-wrapper-desc--left").addClass("animated fadeInLeft");
+    }
+  });
+
   $("#contact").inViewport(function(px) {
     if (px > 0) {
       $(this).addClass("animated fadeInUp slowly delay-5s");
